@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: backend-auth-service
+    env: node
+    plan: free
+    region: oregon  # or ohio, frankfurt, etc.
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://santhoshtr:g7Wh3P0gVNX2FuOS@cluster0.vskfq4e.mongodb.net/users?retryWrites=true&w=majority&appName=Cluster0
+      - key: SECRETKEY
+        value: mysecretkey
