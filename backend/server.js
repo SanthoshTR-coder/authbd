@@ -9,7 +9,13 @@ connectDB(); // ✅ Now it connects to MongoDB
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: ['https://authfd.vercel.app', 'https://authfd-u6ii.vercel.app'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // ✅ Use the auth routes at /api/auth/*
