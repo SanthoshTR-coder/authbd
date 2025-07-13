@@ -3,7 +3,8 @@ services:
     name: backend-auth-service
     env: node
     plan: free
-    region: oregon  # or ohio, frankfurt, etc.
+    region: oregon
+    rootDir: backend    
     buildCommand: npm install
     startCommand: node server.js
     envVars:
